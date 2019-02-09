@@ -1,3 +1,4 @@
+
 class Manager(object):
     pass
 
