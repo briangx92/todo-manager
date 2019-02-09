@@ -12,15 +12,27 @@ class Item(object):
     def createTask():
         now = datetime.now()
         date_time = now.strftime("%Y/%m/%d %H:%M:%S")
-        todofile = open("todos.txt", "a+")
         print(dedent("""
         Type help for list of commands
         """))
-        new_task = input("What do you want to do?")
+        new_task = input("What do you want to do? > ")
         list = []
-        new_task = prompt
 
-        if new_task == "new todo":
+
+        if new_task == "1":
+            todofile = open("todos.txt", "a+")
+            print(dedent("""
+            Create a new task
+            """))
+            new_todo = input("> ")
+            todofile.write(new_todo + " "+ date_time + "\n")
+            
+            
+
+            
+
+
+
             
 
 
