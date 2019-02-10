@@ -6,5 +6,6 @@ class Item(object):
     def add_time():
         now = datetime.now()
         date_time = now.strftime("%Y/%m/%d %H:%M:%S")
-        
+
 Item.add_time()
+        

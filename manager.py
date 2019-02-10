@@ -3,14 +3,6 @@ from sys import exit
 
 class Manager(object):
 
-   def create_task():
-        print(dedent("""
-        **********************************
-        * Type help for list of commands *
-        **********************************
-        """))
-        new_task = input("What do you want to do? > ")
-
         if new_task == "new":
             todofile = open(r"todos.txt", "a+")
             print(dedent("""
