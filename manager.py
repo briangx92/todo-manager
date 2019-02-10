@@ -22,7 +22,6 @@ class Manager(object):
 
         if prompt == "yes":
             Manager.new_task()
-            return 'new item created'
         else:
             exit(0)
 
