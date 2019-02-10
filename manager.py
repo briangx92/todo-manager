@@ -1,16 +1,15 @@
-from todos.py import function() #<-- arbitrary for now
+from item.py import Item
 
-class Manager(object)
+class Manager(object):
 
-    def __init__(self, todo_list, new_task, complete):
+    def __init__(self, todo_list, new_task):
         self.todo_list = todo_list
         self.new_task = new_task
-        self.complete = complete
     
     def todo(self):
-        todo_file = open(r"todos.txt", "r")
-        item_list = input("> ")
+        Item()
+        
+        
 
-    def create(self):
-        todo
 
+Manager.todo(self)
