@@ -32,7 +32,7 @@ class Manager(object):
             todofile = open("todos.txt", "r")
             print(todofile.read())
             todofile.close()
-            Manager.create_task
+            exit(0)
 
         elif new_task == 'help':
             print(dedent("""
