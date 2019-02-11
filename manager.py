@@ -1,8 +1,9 @@
 from textwrap import dedent
 from sys import exit
+from item import Item
 
 class Manager(object):
-
+    
     def create_task():
 
         print(dedent("""
@@ -19,12 +20,14 @@ class Manager(object):
             * Create a new task *
             ********************* """))
             new_todo = input("> ")
-            todofile.write(new_todo + " " + "\n")
+            todofile.write(" " + new_todo + "\n")
             todofile.close()
             prompt = input("Do you want to create a new task? yes or no?>  ")
 
             if prompt == "yes":
                 Manager.create_task()
+                Item.add_time()
+
             else:
                 exit(0)
 
@@ -39,9 +42,13 @@ class Manager(object):
             *****************************
             * new (creates a new task)  *
             * list (list all the items) *
+            * exit (exit program)       *
             *****************************
             """))
             Manager.create_task()
+
+        elif new_task == 'exit':
+            exit(0)
         else:
             print("command not recognized")
             prompt = input("Do you want to restart? yes or no?> ")
