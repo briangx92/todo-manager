@@ -10,7 +10,3 @@ class ToDoList(object):
             exit(0)
 
 ToDoList.todosoftware()
-
-    
-
-
