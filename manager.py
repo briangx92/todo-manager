@@ -22,6 +22,7 @@ class Manager(object):
             new_todo = input("> ")
             todofile.write(" " + new_todo + "\n")
             todofile.close()
+            Item.add_time()
             prompt = input("Do you want to create a new task? yes or no?>  ")
 
             if prompt == "yes":
@@ -35,7 +36,7 @@ class Manager(object):
             todofile = open("todos.txt", "r")
             print(todofile.read())
             todofile.close()
-            Manager.create_task
+            Manager.create_task()
 
         elif new_task == 'help':
             print(dedent("""
@@ -57,5 +58,15 @@ class Manager(object):
                 Manager.create_task()
             elif prompt == 'no':
                 exit(0)
-        
+
+    def iscomplete():
+        print(dedent("""
+        *****************************************
+        * Do you have a task that is completed? *
+        *****************************************
+        """))
+        todofile = open("todos.txt", "a+")
+
+
 Manager.create_task()
+Item.add_time()
