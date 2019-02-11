@@ -6,8 +6,7 @@ class Item(object):
     def add_time():
         now = datetime.now()
         date_time = now.strftime("%Y/%m/%d %H:%M:%S")
-    
-    def
+        todofile = open("todos.txt", "a+")
+        todofile.write(f"\t ~~~{date_time} \n")
 
-Item.add_time()
-        
+              
