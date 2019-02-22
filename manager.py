@@ -1,72 +1,47 @@
 from textwrap import dedent
 from sys import exit
 from item import Item
+# Print all of the to-do items in the list. x
+# Add a new item to the list. x
+# Mark an item as completed.
 
 class Manager(object):
+
+
+    def __init__(self, task, iscomplete):
+        self.task = task
+        self.iscomplete = iscomplete
     
-    def create_task():
+    def todo_list(self):
+        with open('todos.txt', 'r') as rf:
+            for line in rf:
+                print(line)
 
-        print(dedent("""
-        **********************************
-        * Type help for list of commands *
-        **********************************
-            """))
-        new_task = input("What do you want to do? > ")
+    def todo_new(self):
+        with open('todos.txt', 'a+') as af:
+            print("Create a new task")
+            new_task = input("> ")
+            af.write(new_task + '\n')
+    
+    # def todo_iscomplete(self):
+    #     with open('todos.txt', 'r') as edit:
+    #          # take user input which represents name of task
+    #         completed_task = input("What Task Did You Complete? ")
+    #         # copy contents of txt
+    #         for line in edit:
+    #             if completed_task == edit.readlines:
+    #                 edit.write(line)
+                
 
-        if new_task == "new":
-            todofile = open(r"todos.txt", "a+")
-            print(dedent("""
-            *********************
-            * Create a new task *
-            ********************* """))
-            new_todo = input("> ")
-            todofile.write(" " + new_todo + "\n")
-            todofile.close()
-            Item.add_time()
-            prompt = input("Do you want to create a new task? yes or no?>  ")
+        # delete text file's contents
 
-            if prompt == "yes":
-                Manager.create_task()
-                Item.add_time()
+        # look at copy, check each line that task name matches user input
 
-            else:
-                exit(0)
+        # change that line so that it is shown to be completed
 
-        elif new_task == 'list':
-            todofile = open("todos.txt", "r")
-            print(todofile.read())
-            todofile.close()
-            exit(0)
+        # that copy string, you can put back into the text file
+            
 
-        elif new_task == 'help':
-            print(dedent("""
-            *****************************
-            * new (creates a new task)  *
-            * list (list all the items) *
-            * exit (exit program)       *
-            *****************************
-            """))
-            Manager.create_task()
-
-        elif new_task == 'exit':
-            exit(0)
-        else:
-            print("command not recognized")
-            prompt = input("Do you want to restart? yes or no?> ")
-
-            if prompt == 'yes':
-                Manager.create_task()
-            elif prompt == 'no':
-                exit(0)
-
-    def iscomplete():
-        print(dedent("""
-        *****************************************
-        * Do you have a task that is completed? *
-        *****************************************
-        """))
-        todofile = open("todos.txt", "a+")
-
-
-Manager.create_task()
-Item.add_time()
+taskmanager = Manager(False, False)           
+print(taskmanager.todo_new())
+print(taskmanager.todo_list())
